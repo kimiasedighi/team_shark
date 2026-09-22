@@ -10,26 +10,26 @@ rng = np.random.default_rng(1)
 def shark_rule(observation, memory):
 
 
-    found_target = get_memory(memory)
-    sees_target, target_direction = see_target(observation)
+    #found_target = get_memory(memory)
+    #sees_target, target_direction = see_target(observation)
 
     #if not target and not pheromones --> explore
     #if not target but pheromones --> set weaker pheromone, go to target
 
 
     #if see target --> set pheromone, go to target
-    if sees_target and not found_target:
-        found_target = True
-        dx, dy = target_direction
-        n = float(np.hypot(dx, dy))
-        move = (0.0, 0.0) if n < 1e-9 else (0.3 * dx / n, 0.3 * dy / n)
-        pheromones=(0.01,)
-
-    memory = set_memory(memory, found_target)
+    #if sees_target and not found_target:
+    #    found_target = True
+    #    dx, dy = target_direction
+    #    n = float(np.hypot(dx, dy))
+    #    move = (0.0, 0.0) if n < 1e-9 else (0.3 * dx / n, 0.3 * dy / n)
+    #    pheromones=(0.01,)
+#
+    #memory = set_memory(memory, found_target)
     return fa.Action(
         push=0.0,
-        move=move,
-        pheromones=pheromones,
+        #move=move,
+        #pheromones=pheromones,
     ), memory
 
 
